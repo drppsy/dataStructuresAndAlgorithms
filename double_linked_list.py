@@ -22,7 +22,7 @@ class CircualBoubleLinkedList(object):
         return self.root.prev
 
     def append(self,value):
-        if self.maxsize is not None and self.length == self.maxsize:
+        if self.maxsize is not None and self.length >= self.maxsize:
             raise Exception("Full")
         node = Node(value=value)
         tailnode = self.tailnode()

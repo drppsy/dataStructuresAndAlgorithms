@@ -1,5 +1,5 @@
 # 判断某个输入项是否是字符串
-
+print("请输入任意字符串")
 a_string = list(input())
 a_string_len = len(a_string)
 
