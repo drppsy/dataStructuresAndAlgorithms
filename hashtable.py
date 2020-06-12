@@ -1,3 +1,5 @@
+# 哈希表还没有深入掌握
+
 class Array(object):
 
     def __init__(self,size=32,init=None):
@@ -62,3 +64,60 @@ class HashTable(object):
             else:
                 index = (index*5 +1) % _len
         return None
+
+    def _slot_can_insert(self,index):
+        return (self._table[index] is HashTable.EMPTY or self._table[index] is HashTable.UNUSED)
+
+    def _find_slot_for_insert(self,key):
+        index = self._hash(key)
+        _len = len(self._table)
+        while not self._slot_can_insert(index):
+            index = (index*5 +1) % _len
+        return index
+
+    def __contains__(self, key):
+        index = self._find_key(key)
+        return index is not None
+
+    def add(self,key,value):
+        if key in self:
+            index = self._find_key(key)
+            self._table[index] = value
+            return False
+        else:
+            index = self._find_slot_for_insert(key)
+            self._table[index] = Slot(key,value)
+            self.length += 1
+            if self._load_factor >= 0.8:
+                self._rehash()
+            return True
+
+    def rehash(self):
+        old_table = self._table
+        resize = len(old_table)*2
+        self._table = Array(resize,HashTable.UNUSED)
+        for slot in old_table:
+            if slot is not HashTable.UNUSED and slot is not  HashTable.EMPTY:
+                index = self._find_slot_for_insert(slot.value)
+                self._table[index] = slot
+                self.length += 1
+
+    def get(self,key,default = None):
+        index = self._find_key(key)
+        if index is None:
+            return default
+        else:
+            return self._table[index].value
+
+    def remove(self,key):
+        index = self._find_key(key)
+        if index is None:
+            raise KeyError()
+        value = self._table[index].value
+        self._table[index] = HashTable.EMPTY
+        return value
+
+    def __iter__(self):
+        for slot in self._table:
+            if slot not in (HashTable.EMPTY,HashTable.UNUSED):
+                yield slot.key
