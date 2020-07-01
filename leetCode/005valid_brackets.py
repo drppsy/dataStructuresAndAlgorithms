@@ -18,15 +18,15 @@
 # print(stack)
 
 class Solution:
-    def isValid(self,strs):
-        adict = {"(":")","[":"]","{":"}","?":"?"}
-        stack = ["?"]
-        for s in strs:
-            if s in adict:
-                stack.append(s)
-            elif adict[stack.pop()] != s :
+    def isValid(self,s):
+        adict = {")":"(","]":"[","}":"{"}
+        stack = []
+        for c in s:
+            if c in adict.values():
+                stack.append(c)
+            elif not stack or adict[c] != stack.pop() :
                 return False
-        return len(stack) == 1
+        return not stack
 
 def test_solution():
     solu = Solution()
@@ -35,6 +35,10 @@ def test_solution():
 
     strs = "(){}{}{({()})}[)]"
     assert solu.isValid(strs) == False
+
+    strs = "(((()))"
+    assert solu.isValid(strs) == False
+
 
 test_solution()
 
