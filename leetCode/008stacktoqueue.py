@@ -9,14 +9,13 @@ class Queue:
     def pop(self):
         if self.output_stack :
             return self.output_stack.pop()
+        while self.input_stack:
+            p = self.input_stack.pop()
+            self.output_stack.append(p)
+        if self.output_stack:
+            return self.output_stack.pop()
         else:
-            while self.input_stack:
-                p = self.input_stack.pop()
-                self.output_stack.append(p)
-            if self.output_stack:
-                return self.output_stack.pop()
-            else:
-                return -1
+            return -1
 
     def peek(self):
         if self.output_stack :
