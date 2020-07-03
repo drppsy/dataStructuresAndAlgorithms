@@ -43,8 +43,6 @@ def test_queue():
     q.pop()
     q.pop()
 
-    # q.peek()
-    # assert q.peek() == 3
 
 test_queue()
 

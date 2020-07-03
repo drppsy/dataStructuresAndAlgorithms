@@ -9,6 +9,6 @@ y = 24
 s = automaticInvestment(m,r,y)
 print(s)
 
-r = pow(1.25,21)
-s = 100 * r
-print(s)
+# r = pow(1.25,21)
+# s = 100 * r
+# print(s)

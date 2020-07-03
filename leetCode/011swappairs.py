@@ -1,16 +1,18 @@
-# Definition for singly-linked list.
 class ListNode:
-    def __init__(self, x):
+    def __init__(self,x):
         self.val = x
         self.next = None
 
-
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        cur, prev = head,None
-        while cur:
-            cur.next, prev, cur = prev, cur, cur.next
-        return prev
+
+    def swapPairs(self,head):
+        pre,pre.next = self,head
+        while pre.next and pre.next.next:
+            a = pre.next
+            b = a.next
+            pre.next, b.next, a.next = b,a,b.next
+            pre = a
+        return self.next
 
 
 def test_solution():
@@ -30,8 +32,11 @@ def test_solution():
 
 
     s = Solution()
-    rfiv = s.reverseList(head)
+    rfiv = s.swapPairs(head)
+
+    print(rfiv.val)
+
     rfour = rfiv.next
-    assert rfour.val == 4
+    print(rfour.val)
 
 test_solution()
