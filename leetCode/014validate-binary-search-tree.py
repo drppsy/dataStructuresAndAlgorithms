@@ -15,3 +15,20 @@ class Solutions:
         if root is None:
             return []
         return self.inorder(root.left) + [root.val] + self.inorder(root.right)
+
+    def isValidBST2(self,root):
+        self.prev = None
+        self.helper(root)
+
+    def helper(self,root):
+        if root is None:
+            return True
+
+        if not self.helper(root.left):
+            return False
+
+        if self.prev and self.prev.val >= root.val:
+            return False
+
+        self.prev = root
+        return self.helper(root.right)
