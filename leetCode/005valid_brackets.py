@@ -18,6 +18,7 @@
 # print(stack)
 
 class Solution:
+
     def isValid(self,s):
         adict = {")":"(","]":"[","}":"{"}
         stack = []
@@ -41,4 +42,3 @@ def test_solution():
 
 
 test_solution()
-
