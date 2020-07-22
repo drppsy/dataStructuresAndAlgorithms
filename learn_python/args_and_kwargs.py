@@ -1,3 +1,9 @@
+'''
+精品文章
+https://zhuanlan.zhihu.com/p/70649428
+'''
+
+
 def kw_dict(v,*args,**kwargs):
     # 可变参数*args在传入函数后，被封装成一个tuple来进行使用
     # 可变参数**kwargs，被封装成dict字典类型来进行使用
