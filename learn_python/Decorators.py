@@ -16,7 +16,7 @@ def runTime(func):
 
 # @是装饰一个函数的快捷方法，@后该函数就成为了被装饰函数
 @runTime
-def bubleSort(arr):
+def bubbleSort(arr):
     num = len(arr)
     for i in range(num):
         for j in range(num - i -1):
@@ -27,7 +27,7 @@ def bubleSort(arr):
 
 # 运行过程是，（1）将buble函数名传递给runTime函数，runTime函数返回func_run_time函数名，因为后面有（），所以func_time_time函数被调用，执行该函数名下面的代码逻辑
 arr = [45,7,2,24,32,9,10,28]
-a = bubleSort(arr)
+a = bubbleSort(arr)
 print(a)
 
 
