@@ -21,21 +21,25 @@ class Person:
     def __init__(self):
         print("niangao")
 
+
 my_class = Person
 my_class()
+
 
 # （2）可以添加到集合对象中
 obj_list = []
 obj_list.append(ask)
 obj_list.append(Person)
 
-for item in  obj_list:
+for item in obj_list:
     print(item())
+
 
 # （3）可以作为参数给传递函数;（4）可以当做函数的返回值
 def my_decorator():
     print("dec start")
     return ask
 
+
 my_func3 = my_decorator()
-my_func("zhuzhu")
+my_func3("zhuzhu")
