@@ -1,0 +1,4 @@
+They say people come to Python for the language, but stay for the community. And it’s true!
+The Python community is one of the most supportive and friendly developer communities around. In the spirit of this, we love sharing insights and stories from fellow Pythonistas.
+From rockstar coders to unsung heroes, we want to speak to you all. It is our hope that you, reader, will see your name below, too.
+If you know someone in the Python community that deserves a spotlight for their amazing work in the community, then get in touch with us via Twitter.

@@ -1,6 +1,6 @@
 class Solutions:
 
-    def strSort(self,s):
+    def str_sort(self,s):
         hash_map = {}
         for c in s:
             hash_map[c] = hash_map.get(c,0) + 1
@@ -8,10 +8,10 @@ class Solutions:
         return res
 
 
-def test_strSort():
+def test_str_sort():
     s = 'aaffdffwwwweererwwwegfg'
     so = Solutions()
-    res = so.strSort(s)
+    res = so.str_sort(s)
     print(res)
 
-test_strSort()
+test_str_sort()

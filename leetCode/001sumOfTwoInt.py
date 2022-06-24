@@ -10,7 +10,6 @@ class Solutions:
 
     '''两层循环，时间复杂度是O(n)'''
     def twoSum2(self,nums,target):
-
         for i in range(len(nums)-1):
             for j in range(i+1,len(nums)):
                 if nums[i] + nums[j] == target:
@@ -30,3 +29,7 @@ def test_solutions():
 
 test_solutions()
 
+nums = [2,7,8,10,13,17]
+a = enumerate(nums)
+for i,x in a:
+    print(i,x)
